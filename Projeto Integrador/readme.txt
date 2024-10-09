@@ -1,0 +1,1 @@
+Como o projeto ainda não foi completamente definido, será desenvolvido uma ideia inicial
