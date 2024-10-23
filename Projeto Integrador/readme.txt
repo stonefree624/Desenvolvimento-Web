@@ -1,1 +1,1 @@
-Como o projeto ainda não foi completamente definido, será desenvolvido uma ideia inicial
+Projeto Integrador: Conversor de Binario, Decimal e Hexadecimal e Decodificador de Criptografia

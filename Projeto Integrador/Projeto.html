@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Binária</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2>Calculadora Binária</h2>
+    
+    <!-- Input para número binário -->
+    <input type="text" id="binaryInput" placeholder="Digite o número binário">
+    <button onclick="binaryToDecimal()">Converter para Decimal</button>
+    
+    <!-- Input para número decimal -->
+    <input type="text" id="decimalInput" placeholder="Digite o número decimal">
+    <button onclick="decimalToBinary()">Converter para Binário</button>
+
+    <!-- Área de Resultado -->
+    <p id="result"></p>
+</div>
+
+<script>
+    // Função para converter binário em decimal
+    function binaryToDecimal() {
+        const binary = document.getElementById("binaryInput").value;
+        // Verifica se o valor inserido é um número binário válido
+        if (/^[01]+$/.test(binary)) {
+            const decimal = parseInt(binary, 2);
+            document.getElementById("result").innerText = `Decimal: ${decimal}`;
+        } else {
+            document.getElementById("result").innerText = "Por favor, insira um número binário válido.";
+        }
+    }
+
+    // Função para converter decimal em binário
+    function decimalToBinary() {
+        const decimal = document.getElementById("decimalInput").value;
+        if (!isNaN(decimal) && decimal !== '') {
+            const binary = parseInt(decimal).toString(2);
+            document.getElementById("result").innerText = `Binário: ${binary}`;
+        } else {
+            document.getElementById("result").innerText = "Por favor, insira um número decimal válido.";
+        }
+    }
+</script>
+
+</body>
+</html>
